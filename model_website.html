@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arist</title>
+
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+        body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+
+        header {
+      background: white;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #ff4d30;
+    }
+
+    .demo-btn {
+      background: #ff4d30;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    
+        .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #ff4d30;
+      color: white;
+      padding: 3rem 2rem;
+      align-items: center;
+    }
+
+    
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+        .cta {
+      padding: 0.75rem 1.5rem;
+      background: white;
+      color: #ff4d30;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      background: #f9f9f9;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .stat-box h2 {
+      font-size: 2rem;
+      color: #070707;
+    }
+
+    .stat-box p {
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .footer-cta {
+      background: #111;
+      color: white;
+      padding: 3rem 2rem;
+    }
+
+    .cta-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cta-text {
+      max-width: 500px;
+    }
+
+    .cta-text h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-text p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .demo-btn.dark {
+      background: white;
+      color: #111;
+      font-weight: bold;
+      border: none;
+    }
+
+    .cta-image img {
+      width: 300px;
+      margin-top: 1rem;
+    }
+
+    footer.footer {
+      background: #000;
+      color: #ccc;
+      padding: 2rem;
+    }
+
+    .footer-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .footer-links a {
+      display: block;
+      text-decoration: none;
+      color: #aaa;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-address p {
+      font-size: 0.9rem;
+      color: #999;
+      line-height: 1.4;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">Arist</div>
+      <nav>
+        <a href="#">How it works</a>
+        <a href="#">Pricing</a>
+        <a href="#">Case studies</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a href="#" class="demo-btn">Get a demo</a>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="hero-content">
+      <h1>Build and create with AI</h1>
+      <p>Instantly turn collateral into research-driven experiences</p>
+      <button class="cta">Try the AI</button>
+    </div>
+    <div class="hero-image">
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat-box">
+      <h2>92%</h2>
+      <p>of employees prefer Arist</p>
+    </div>
+    <div class="stat-box">
+      <h2>+30%</h2>
+      <p>confidence lift</p>
+    </div>
+    <div class="stat-box">
+      <h2>500k</h2>
+      <p>employees trained</p>
+    </div>
+    <div class="stat-box">
+      <h2>>90%</h2>
+      <p>satisfaction rates</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <div class="footer-logo">Arist<sup>®</sup></div>
+      <div class="footer-links">
+        <div><strong>Product</strong></div>
+        <a href="#">Home</a>
+        <a href="#">Sidekick (AI)</a>
+        <a href="#">Use cases</a>
+        <a href="#">Demo</a>
+      </div>
+      <div class="footer-links">
+        <div><strong>Company</strong></div>
+        <a href="#">Blog</a>
+        <a href="#">Pricing</a>
+        <a href="#">Case studies</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-links">
+        <div><strong>Legal</strong></div>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Security</a>
+      </div>
+      <div class="footer-address">
+        <p>2371 Market Street #123<br>San Francisco, CA 94114</p>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
