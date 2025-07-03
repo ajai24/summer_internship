@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess My Number</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .again-but {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .number-box {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            color: black;
+            font-size: 36px;
+            text-align: center;
+            line-height: 100px;
+            margin: 20px;
+            border: 50%;
+        }
+
+        .line-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            width: 100%;
+        }
+
+        .line {
+            flex: 1;
+            height: 3px;
+            background-color: white;
+        }
+
+        .guess-no {
+      
+            text-align: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #guessInput {
+            width: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+        }
+
+        #checkButton {
+            
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .message-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .message {
+            font-weight: bold;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .score, .highscore {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="again-but">Again</button>
+    <h2>Guess MY Number</h2>
+    
+    <div class="line-box">
+        <div class="line"></div>
+        <div class="number-box">?</div>
+        <div class="line"></div>
+    </div>
+
+    <div class="guess-no">
+        <input type="text" id="guessInput" placeholder="Enter your guess">
+        <br>
+        <br>
+        <button id="checkButton">Check</button>
+    </div>
+
+    <div class="message-box">
+        <p class="message">Start guessing...</p>
+        <p class="score">Score: 20</p>
+        <p class="highscore">Highscore: 0</p>
+
+    </div>
+
+    <script>
+        let secretNumber = Math.trunc(Math.random() * 20) + 1;
+        let score = 20;
+        let highscore = 0;
+
+        const message = document.querySelector('.message');
+        const scoreDisplay = document.querySelector('.score');
+        const highscoreDisplay = document.querySelector('.highscore');
+        const numberBox = document.querySelector('.number-box');
+        const body = document.body;
+
+        document.getElementById('checkButton').addEventListener('click', function () {
+            const guess = Number(document.getElementById('guessInput').value);
+
+            if (!guess) {
+                message.textContent = ' No number!';
+            } else if (guess === secretNumber) {
+                message.textContent = ' Correct Number!';
+                numberBox.textContent = secretNumber;
+                body.style.backgroundColor = 'green';
+                numberBox.style.width = '150px';
+
+                if (score > highscore) {
+                    highscore = score;
+                    highscoreDisplay.textContent = 'Highscore: ' + highscore;
+                }
+            } else {
+                if (score > 1) {
+                    message.textContent = guess > secretNumber ? 'Too high!' : 'Too low!';
+                    score--;
+                    scoreDisplay.textContent = 'Score: ' + score;
+                } else {
+                    message.textContent = ' You lost the game!';
+                    scoreDisplay.textContent = 'Score: 0';
+                    body.style.backgroundColor = 'red';
+                }
+            }
+        });
+
+        document.querySelector('.again-but').addEventListener('click', function () {
+            score = 20;
+            secretNumber = Math.trunc(Math.random() * 20) + 1;
+            message.textContent = 'Start guessing...';
+            scoreDisplay.textContent = 'Score: 20';
+            numberBox.textContent = '?';
+            document.getElementById('guessInput').value = '';
+            body.style.backgroundColor = 'black';
+            numberBox.style.width = '100px';
+        });
+    </script>
+
+</body>
+</html>
